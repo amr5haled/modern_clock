@@ -25,10 +25,11 @@ jobs:
         gradle-version: 8.2
 
     - name: Build with Gradle
+      working-directory: ./modern_clock
       run: gradle assembleDebug --no-daemon --stacktrace --info
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
-        path: app/build/outputs/apk/debug/app-debug.apk
+        path: modern_clock/app/build/outputs/apk/debug/app-debug.apk
